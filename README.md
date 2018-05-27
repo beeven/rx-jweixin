@@ -1,5 +1,5 @@
 # rx-jweixin
-Wrap jweixin with rxjs.
+Wrapping jweixin with rxjs.
 
 使用 rxjs 对微信jssdk进行封装，里面再包一层Promise，以解决在 Angular 中 wx的回调函数无法更新页面的问题。定义了输入参数的格式，使得在使用 VSCode 等工具编辑时能进行提示。
 

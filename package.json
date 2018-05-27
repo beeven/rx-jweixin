@@ -1,8 +1,8 @@
 {
   "name": "rx-jweixin",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.ts",
+  "description": "Wrap jweixin with rxjs.",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha -r ts-node/register -r jsdom-global/register test/**/*.spec.ts",
     "install": "tsc"
@@ -27,5 +27,6 @@
     "sinon": "^5.0.10",
     "ts-node": "^6.0.5",
     "typescript": "^2.8.3"
-  }
+  },
+  "typings": "dist/index.d.ts"
 }
