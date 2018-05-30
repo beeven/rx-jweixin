@@ -61,7 +61,7 @@ export enum JsApi {
 
     scanQRCode = "scanQRCode",
 
-openProductSpecificView = "openProductViewWithPid",
+    openProductSpecificView = "openProductViewWithPid",
     addCard = "addCard",
 
     chooseCard = "chooseCard",
@@ -101,13 +101,13 @@ export function checkJsApi(
                 for (let i in res.checkResult) {
                     let apiString = i as keyof typeof JsApi;
                     let api: JsApi = JsApi[apiString];
-                    ret.push({api:api, available: res.checkResult[i]})
+                    ret.push({ api: api, available: res.checkResult[i] })
                 }
-                resolve(ret);   
+                resolve(ret);
             },
-            fail: (err)=>{
+            fail: (err) => {
                 reject(err);
-            }  
+            }
         })
     }));
 }
@@ -115,16 +115,31 @@ export function checkJsApi(
 /**
  * 调用任意接口
  * 若调用为公开接口，必须在 config 中设置 beta = true
- * @param fname 接口名称
+ * @param funcName 接口名称
  * @param args 调用参数
  */
 export function invoke(
-    fname: string | JsApi,
+    funcName: string | JsApi,
     args: any
 ): Observable<any> {
-    return from(new Promise<any>((resolve, reject)=>{
-        wx.invoke(fname,args, (res)=>{
-            resolve(res);  
-        });   
+    return from(new Promise<any>((resolve, reject) => {
+        wx.invoke(funcName, arg s, (res) => {
+            resolve(res);
+        });
+    }));
+}
+
+
+/**
+ * 监听任意事件
+ * @param eventName 事件名称
+ */
+export function on(
+    eventName: string | JsApi
+): Observable<any> {
+    return from(new Promise<any>((resolve, reject) => {
+        wx.on(eventName, (res) => {
+            resolve(res);
+        });
     }));
 }

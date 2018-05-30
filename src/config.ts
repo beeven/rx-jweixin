@@ -17,11 +17,11 @@ export function config(
         nonceStr: string, 
         timestamp: number|Date,
         signature: string,
-        jsApiList: JsApi[],
+        jsApiList: (JsApi | string)[],
         debug = false,
         beta = false
-    ): Observable<null> {
-        return from(new Promise<null>((resolve,reject)=>{
+    ): Observable<void> {
+        return from(new Promise<void>((resolve,reject)=>{
                     wx.config({
                         appId: appId,
                         nonceStr: nonceStr,

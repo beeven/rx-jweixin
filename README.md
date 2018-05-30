@@ -11,7 +11,13 @@ Wrapping jweixin with rxjs.
 ```typescript
 import { config } from "rx-jweixin";
 
-config("appId","noncestr", 123123123, "signature", [JsApi.chooseImage, JsApi.getLocation]).subscribe()
+config("appId","noncestr", 123123123, "signature", 
+    [
+        JsApi.chooseImage, 
+        JsApi.getLocation, 
+        "requestWxFacePictureVerify"
+    ]).subscribe(
+    )
 ```
 
 ### 获取地理位置
@@ -25,6 +31,26 @@ getLocation(LocationType.wgs84).subscribe(
                 }
             );
 ```
+
+### 调用未公开接口
+```typescript
+import { config, invoke } from 'rx-jweixin';
+config("appId", "noncestr", 123123123, "signature", ["requestWxFacePictureVerify"], true, true).subscribe(); 
+
+invoke("requestWxFacePictureVerify", {
+        appid: this.appId,
+        request_verify_pre_info: JSON.stringify({
+            name: name,
+            id_card_number: idCardNum
+        })
+    }).subscribe(
+        (res) => {
+            console.log("Verification result: ", res);
+        }
+    );
+```
+
+
 
 
 ## 现有问题

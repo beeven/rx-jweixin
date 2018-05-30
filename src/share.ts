@@ -13,8 +13,8 @@ export function onMenuShareTimeline(
     title: string,
     link: string,
     imgUrl: string
-): Observable<null> {
-    return from(new Promise<null>((resolve, reject)=>{
+): Observable<void> {
+    return from(new Promise<void>((resolve, reject)=>{
         wx.onMenuShareTimeline({
             title: title,
             link: link,
@@ -53,8 +53,8 @@ export function onMenuShareAppMessage(
     imgUrl: string,
     type = ShareType.link,
     dataUrl = ''
-): Observable<null> {
-    return from(new Promise<null>((resolve, reject)=>{
+): Observable<void> {
+    return from(new Promise<void>((resolve, reject)=>{
         wx.onMenuShareAppMessage({
             title: title,
             desc: description,
@@ -85,8 +85,8 @@ export function onMenuShareQQ(
     description: string,
     link: string,
     imgUrl: string
-): Observable<null> {
-    return from(new Promise<null>((resolve,reject)=>{
+): Observable<void> {
+    return from(new Promise<void>((resolve,reject)=>{
         wx.onMenuShareQQ({
             title:title,
             desc: description,
@@ -117,8 +117,8 @@ export function onMenuShareQZone(
     description: string,
     link: string,
     imgUrl: string
-): Observable<null> {
-    return from(new Promise<null>((resolve,reject)=>{
+): Observable<void> {
+    return from(new Promise<void>((resolve,reject)=>{
         wx.onMenuShareQZone({
             title:title,
             desc: description,
@@ -149,8 +149,8 @@ export function onMenuShareWeibo(
     description: string,
     link: string,
     imgUrl: string
-): Observable<null> {
-    return from(new Promise<null>((resolve,reject)=>{
+): Observable<void> {
+    return from(new Promise<void>((resolve,reject)=>{
         wx.onMenuShareWeibo({
             title:title,
             desc: description,

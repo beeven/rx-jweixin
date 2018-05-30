@@ -24,8 +24,8 @@ export function chooseWXPay(
     prepayId: string,
     paySign: string,
     signType = SignType.md5
-): Observable<null> {
-    return from(new Promise<null>((resolve,reject)=>{
+): Observable<void> {
+    return from(new Promise<void>((resolve,reject)=>{
         wx.chooseWXPay({
             timestamp: timestamp,
             nonceStr: nonceStr,
