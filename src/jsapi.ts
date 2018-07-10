@@ -123,7 +123,7 @@ export function invoke(
     args: any
 ): Observable<any> {
     return from(new Promise<any>((resolve, reject) => {
-        wx.invoke(funcName, arg s, (res) => {
+        wx.invoke(funcName, args, (res) => {
             resolve(res);
         });
     }));

@@ -1,6 +1,6 @@
 import { Observable, from } from 'rxjs';
 import wx = require("../lib/jweixin-1.3.2");
-import { JsApi } from './jsApi';
+import { JsApi } from './jsapi';
 
 /**
      * Configure wx

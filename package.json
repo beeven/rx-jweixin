@@ -1,13 +1,17 @@
 {
   "name": "rx-jweixin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrap jweixin with rxjs.",
   "main": "dist/index.js",
   "scripts": {
     "test": "mocha -r ts-node/register -r jsdom-global/register test/**/*.spec.ts",
     "install": "tsc"
   },
-  "keywords": ["weixin", "jweixin", "rxjs"],
+  "keywords": [
+    "weixin",
+    "jweixin",
+    "rxjs"
+  ],
   "author": {
     "name": "Beeven Yip",
     "email": "beeven@hotmail.com"
